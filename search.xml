@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo常用命令</title>
+    <url>/2023/11/28/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>Hexo 约有二十个命令，但普通用户经常使用的大概只有下列几个:</p>
+<span id="more"></span>
+<h3 id="hexo-s"><a href="#hexo-s" class="headerlink" title="hexo s"></a>hexo s</h3><p><code>hexo s</code></p>
+<p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/">http://localhost:4000/</a></p>
+<ul>
+<li><code>hexo s</code> 是 <code>hexo server</code> 的缩写，命令效果一致；  </li>
+<li>预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；  </li>
+<li>对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。</li>
+</ul>
+<h3 id="hexo-n"><a href="#hexo-n" class="headerlink" title="hexo n"></a>hexo n</h3><p><code>hexo n &quot;NAME&quot;</code>  </p>
+<p>新建一篇标题为 NAME 的文章，因为标题里有空格，所以加上了引号。  </p>
+<ul>
+<li>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些；  </li>
+<li><code>hexo n</code> 是 <code>hexo new</code> 的缩写，命令效果一致。</li>
+</ul>
+<p>文章可以拥有如下属性：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Setting</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>layout</td>
+<td>Layout</td>
+<td>post或page</td>
+</tr>
+<tr>
+<td>2</td>
+<td>title</td>
+<td>文章的标题</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>date</td>
+<td>创建日期</td>
+<td>文件的创建日期</td>
+</tr>
+<tr>
+<td>4</td>
+<td>updated</td>
+<td>修改日期</td>
+<td>文件的修改日期</td>
+</tr>
+<tr>
+<td>5</td>
+<td>comments</td>
+<td>是否开启评论</td>
+<td>true</td>
+</tr>
+<tr>
+<td>6</td>
+<td>tags</td>
+<td>标签</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>categories</td>
+<td>分类</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>permalink</td>
+<td>url中的名字</td>
+<td>文件名</td>
+</tr>
+</tbody></table>
+<p>动态博客中通过发布文章页面设置的各种属性，在hexo里要这样设置。</p>
+<h3 id="hexo-d"><a href="#hexo-d" class="headerlink" title="hexo d"></a>hexo d</h3><p><code>hexo d</code></p>
+<p>自动生成网站静态文件，并部署到设定的仓库。</p>
+<ul>
+<li><code>hexo d</code> 是 <code>hexo deploy</code> 的缩写，命令效果一致。</li>
+</ul>
+<h3 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h3><p><code>hexo clean</code></p>
+<p>清除缓存文件 db.json 和已生成的静态文件 public。</p>
+<ul>
+<li>网站显示异常时可以执行这条命令试试。</li>
+</ul>
+<h3 id="hexo-g"><a href="#hexo-g" class="headerlink" title="hexo g"></a>hexo g</h3><p><code>hexo g</code></p>
+<p>生成网站静态文件到默认设置的 public 文件夹。</p>
+<ul>
+<li>便于查看网站生成的静态文件或者手动部署网站；</li>
+<li>如果使用自动部署，不需要先执行该命令；</li>
+<li><code>hexo g</code> 是 <code>hexo generate</code> 的缩写，命令效果一致。</li>
+</ul>
+<h3 id="hexo-n-page"><a href="#hexo-n-page" class="headerlink" title="hexo n page"></a>hexo n page</h3><p><code>hexo n page NAME</code><br>新建一个标题为 <code>NAME</code> 的页面，默认链接地址为 主页地址&#x2F;NAME&#x2F;</p>
+<ul>
+<li>标题可以为中文，但一般习惯用英文；</li>
+<li>页面标题和文章一样可以随意修改；</li>
+<li>页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</li>
+</ul>
+<p>常用组合  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo s</span><br><span class="line">hexo clean &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>可以用输入法等软件为这些命令设置快捷键，方便调用。</p>
+<h3 id="draft"><a href="#draft" class="headerlink" title="draft"></a>draft</h3><p><code>hexo new draft &quot;new draft&quot;</code></p>
+<p><code>draft</code> 相当于很多博客都有的“私密文章”功能。在source&#x2F;_drafts目录下生成一个new-draft.md文件。但是这个文件不被显示在页面上，链接也访问不到。也就是说如果你想把某一篇文章移除显示，又不舍得删除，可以把它移动到_drafts目录之中。</p>
+<p>如果你希望强行预览草稿，更改配置文件：<br><code>render_drafts: true</code><br>或者，如下方式启动server：<br><code>hexo server --drafts</code><br>下面这条命令可以把草稿变成文章，或者页面：<br><code>hexo publish [layout] &lt;filename&gt;</code>  </p>
+<h3 id="相关说明"><a href="#相关说明" class="headerlink" title="相关说明"></a>相关说明</h3><ul>
+<li>以上命令使用基于 Hexo 3.1.1 版本；</li>
+<li>需要删掉用命令新建的文章或页面时，只需要进入 Hexo 根目录下的 source 文件夹，删除对应文件或文件夹即可；</li>
+<li>更多命令用法请查询 官方文档。</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/a2d298e26dcd">原文链接</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>WSL设置代理</title>
+    <url>/2023/11/28/WSL%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<p>挂梯子后打开WSL显示：<br><code>wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。</code></p>
+<span id="more"></span>
+<p>原因：<br>WSL2 基于 Hyper-V 运行，导致 Linux 子系统和 Windows 在网络上是两台各自独立的机器，从 Linux 子系统访问 Windows 首先需要找到 Windows 的 IP。</p>
+<p>解决方案：<br>打开或创建WSL配置文件(位于<code>C:/User/%你的用户名/.wslconfig</code>),并添加以下内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[experimental]</span><br><span class="line">autoMemoryReclaim=gradual  </span><br><span class="line">networkingMode=mirrored</span><br><span class="line">dnsTunneling=true</span><br><span class="line">firewall=true</span><br><span class="line">autoProxy=true</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/microsoft/WSL/issues/10753">原文链接</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/11/28/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2023/11/28/test/</url>
+    <content><![CDATA[<h2 id="这是一篇测试文章"><a href="#这是一篇测试文章" class="headerlink" title="这是一篇测试文章"></a>这是一篇测试文章</h2>]]></content>
+  </entry>
+  <entry>
+    <title>暂停Windows自动更新</title>
+    <url>/2023/11/29/%E6%9A%82%E5%81%9CWindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/</url>
+    <content><![CDATA[<p>Windows的自动更新有时候会很烦人，本文给出一种通过注册表文件暂停更新的方法。</p>
+<span id="more"></span>
+<p>创建一个 txt 文件导入以下代码：</p>
+<h2 id="暂停更新至2042年（1000周）："><a href="#暂停更新至2042年（1000周）：" class="headerlink" title="暂停更新至2042年（1000周）："></a>暂停更新至2042年（1000周）：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]</span><br><span class="line">&quot;FlightSettingsMaxPauseDays&quot;=dword:00001b58</span><br><span class="line">&quot;PauseFeatureUpdatesStartTime&quot;=&quot;2023-07-07T10:00:52Z&quot;</span><br><span class="line">&quot;PauseFeatureUpdatesEndTime&quot;=&quot;2042-09-05T09:59:52Z&quot;</span><br><span class="line">&quot;PauseQualityUpdatesStartTime&quot;=&quot;2023-07-07T10:00:52Z&quot;</span><br><span class="line">&quot;PauseQualityUpdatesEndTime&quot;=&quot;2042-09-05T09:59:52Z&quot;</span><br><span class="line">&quot;PauseUpdatesStartTime&quot;=&quot;2023-07-07T09:59:52Z&quot;</span><br><span class="line">&quot;PauseUpdatesExpiryTime&quot;=&quot;2042-09-05T09:59:52Z&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="恢复至默认："><a href="#恢复至默认：" class="headerlink" title="恢复至默认："></a>恢复至默认：</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings]</span><br><span class="line">&quot;FlightSettingsMaxPauseDays&quot;=-</span><br><span class="line">&quot;PauseFeatureUpdatesStartTime&quot;=-</span><br><span class="line">&quot;PauseFeatureUpdatesEndTime&quot;=-</span><br><span class="line">&quot;PauseQualityUpdatesStartTime&quot;=-</span><br><span class="line">&quot;PauseQualityUpdatesEndTime&quot;=-</span><br><span class="line">&quot;PauseUpdatesStartTime&quot;=-</span><br><span class="line">&quot;PauseUpdatesExpiryTime&quot;=-</span><br></pre></td></tr></table></figure>
+<p>另存为 .reg 文件即可双击使用</p>
+<p><a href="https://zhuanlan.zhihu.com/p/642914883">原文链接</a></p>
+]]></content>
+  </entry>
+</search>
