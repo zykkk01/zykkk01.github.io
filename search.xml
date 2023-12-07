@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git的简单使用</title>
+    <url>/2023/12/03/Git%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>本教程的环境为 Windows+WSL</p>
+<h2 id="什么是-Git"><a href="#什么是-Git" class="headerlink" title="什么是 Git"></a>什么是 Git</h2><p>Git 是一种分布式版本控制系统，用于管理软件项目的源代码。它是由 Linux 之父 Linus Torvalds 开发的，并已经成为了现代软件开发领域中最流行的版本控制系统之一。<br>使用 Git 可以追踪代码的历史修改记录，方便团队协作、代码共享和代码重构。</p>
+<span id="more"></span>
+<h2 id="Git-的安装"><a href="#Git-的安装" class="headerlink" title="Git 的安装"></a>Git 的安装</h2><h3 id="Windows系统："><a href="#Windows系统：" class="headerlink" title="Windows系统："></a>Windows系统：</h3><p><a href="https://git-scm.com/download/win">官网</a>下载安装程序安装（可能需要挂梯子），使用默认安装选项即可。</p>
+<h3 id="Linux-系统"><a href="#Linux-系统" class="headerlink" title="Linux 系统"></a>Linux 系统</h3><p>包管理器安装</p>
+<pre><code>sudo apt install git
+</code></pre>
+<h3 id="Mac-系统"><a href="#Mac-系统" class="headerlink" title="Mac 系统"></a>Mac 系统</h3><p>包管理器安装  </p>
+<pre><code>brew install git
+</code></pre>
+<h3 id="如何检验git已经安装成功？"><a href="#如何检验git已经安装成功？" class="headerlink" title="如何检验git已经安装成功？"></a>如何检验git已经安装成功？</h3><pre><code>git --version
+</code></pre>
+<p>如果安装成功，将显示Git的版本号<br><a href="https://imgse.com/i/piytahd"><img src="https://z1.ax1x.com/2023/12/03/piytahd.png" alt="piytahd.png"></a></p>
+<h2 id="Git-模型"><a href="#Git-模型" class="headerlink" title="Git 模型"></a>Git 模型</h2><p><img src="https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-fall-ckc/lec2/lec2/model.png"></p>
+]]></content>
+      <tags>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo常用命令</title>
     <url>/2023/11/28/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>Hexo 约有二十个命令，但普通用户经常使用的大概只有下列几个:</p>
@@ -116,18 +138,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>WSL设置代理</title>
-    <url>/2023/11/28/WSL%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<p>挂梯子后打开WSL显示：<br><code>wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。</code></p>
-<span id="more"></span>
-<p>原因：<br>WSL2 基于 Hyper-V 运行，导致 Linux 子系统和 Windows 在网络上是两台各自独立的机器，从 Linux 子系统访问 Windows 首先需要找到 Windows 的 IP。</p>
-<p>解决方案：<br>打开或创建WSL配置文件(位于<code>C:/User/%你的用户名/.wslconfig</code>),并添加以下内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[experimental]</span><br><span class="line">autoMemoryReclaim=gradual  </span><br><span class="line">networkingMode=mirrored</span><br><span class="line">dnsTunneling=true</span><br><span class="line">firewall=true</span><br><span class="line">autoProxy=true</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/microsoft/WSL/issues/10753">原文链接</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2023/11/28/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -144,6 +154,18 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>WSL设置代理</title>
+    <url>/2023/11/28/WSL%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<p>挂梯子后打开WSL显示：<br><code>wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。</code></p>
+<span id="more"></span>
+<p>原因：<br>WSL2 基于 Hyper-V 运行，导致 Linux 子系统和 Windows 在网络上是两台各自独立的机器，从 Linux 子系统访问 Windows 首先需要找到 Windows 的 IP。</p>
+<p>解决方案：<br>打开或创建WSL配置文件(位于<code>C:/User/%你的用户名/.wslconfig</code>),并添加以下内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[experimental]</span><br><span class="line">autoMemoryReclaim=gradual  </span><br><span class="line">networkingMode=mirrored</span><br><span class="line">dnsTunneling=true</span><br><span class="line">firewall=true</span><br><span class="line">autoProxy=true</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/microsoft/WSL/issues/10753">原文链接</a></p>
 ]]></content>
   </entry>
   <entry>

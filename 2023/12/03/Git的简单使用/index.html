@@ -19,27 +19,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="挂梯子后打开WSL显示：wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。">
+    <meta name="description" content="本教程的环境为 Windows+WSL 什么是 GitGit 是一种分布式版本控制系统，用于管理软件项目的源代码。它是由 Linux 之父 Linus Torvalds 开发的，并已经成为了现代软件开发领域中最流行的版本控制系统之一。使用 Git 可以追踪代码的历史修改记录，方便团队协作、代码共享和代码重构。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WSL设置代理">
-<meta property="og:url" content="http://example.com/2023/11/28/WSL%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/index.html">
+<meta property="og:title" content="Git的简单使用">
+<meta property="og:url" content="http://example.com/2023/12/03/Git%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="zykkk01&#39;s blog">
-<meta property="og:description" content="挂梯子后打开WSL显示：wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。">
+<meta property="og:description" content="本教程的环境为 Windows+WSL 什么是 GitGit 是一种分布式版本控制系统，用于管理软件项目的源代码。它是由 Linux 之父 Linus Torvalds 开发的，并已经成为了现代软件开发领域中最流行的版本控制系统之一。使用 Git 可以追踪代码的历史修改记录，方便团队协作、代码共享和代码重构。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-28T15:08:46.000Z">
-<meta property="article:modified_time" content="2023-11-28T15:16:32.387Z">
+<meta property="og:image" content="https://z1.ax1x.com/2023/12/03/piytahd.png">
+<meta property="og:image" content="https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-fall-ckc/lec2/lec2/model.png">
+<meta property="article:published_time" content="2023-12-03T11:45:55.000Z">
+<meta property="article:modified_time" content="2023-12-03T13:10:05.593Z">
 <meta property="article:author" content="zykkk01">
+<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z1.ax1x.com/2023/12/03/piytahd.png">
 
 
-<link rel="canonical" href="http://example.com/2023/11/28/WSL%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/">
+<link rel="canonical" href="http://example.com/2023/12/03/Git%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/11/28/WSL%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/","path":"2023/11/28/WSL设置代理/","title":"WSL设置代理"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/12/03/Git%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/","path":"2023/12/03/Git的简单使用/","title":"Git的简单使用"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>WSL设置代理 | zykkk01's blog</title>
+<title>Git的简单使用 | zykkk01's blog</title>
   
 
 
@@ -122,7 +126,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -135,6 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Git"><span class="nav-number">1.</span> <span class="nav-text">什么是 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">Git 的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows%E7%B3%BB%E7%BB%9F%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">Windows系统：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.2.</span> <span class="nav-text">Linux 系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac-%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.3.</span> <span class="nav-text">Mac 系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%A3%80%E9%AA%8Cgit%E5%B7%B2%E7%BB%8F%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%EF%BC%9F"><span class="nav-number">2.4.</span> <span class="nav-text">如何检验git已经安装成功？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">Git 模型</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -179,7 +184,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/28/WSL%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/03/Git%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -192,12 +197,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="WSL设置代理 | zykkk01's blog">
+      <meta itemprop="name" content="Git的简单使用 | zykkk01's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          WSL设置代理
+          Git的简单使用
         </h1>
 
         <div class="post-meta-container">
@@ -209,7 +214,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-11-28 23:08:46 / 修改时间：23:16:32" itemprop="dateCreated datePublished" datetime="2023-11-28T23:08:46+08:00">2023-11-28</time>
+      <time title="创建时间：2023-12-03 19:45:55 / 修改时间：21:10:05" itemprop="dateCreated datePublished" datetime="2023-12-03T19:45:55+08:00">2023-12-03</time>
     </span>
 
   
@@ -226,7 +231,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>325</span>
+      <span>294</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -243,13 +248,20 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>挂梯子后打开WSL显示：<br><code>wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。</code></p>
+    <div class="post-body" itemprop="articleBody"><p>本教程的环境为 Windows+WSL</p>
+<h2 id="什么是-Git"><a href="#什么是-Git" class="headerlink" title="什么是 Git"></a>什么是 Git</h2><p>Git 是一种分布式版本控制系统，用于管理软件项目的源代码。它是由 Linux 之父 Linus Torvalds 开发的，并已经成为了现代软件开发领域中最流行的版本控制系统之一。<br>使用 Git 可以追踪代码的历史修改记录，方便团队协作、代码共享和代码重构。</p>
 <span id="more"></span>
-<p>原因：<br>WSL2 基于 Hyper-V 运行，导致 Linux 子系统和 Windows 在网络上是两台各自独立的机器，从 Linux 子系统访问 Windows 首先需要找到 Windows 的 IP。</p>
-<p>解决方案：<br>打开或创建WSL配置文件(位于<code>C:/User/%你的用户名/.wslconfig</code>),并添加以下内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[experimental]</span><br><span class="line">autoMemoryReclaim=gradual  </span><br><span class="line">networkingMode=mirrored</span><br><span class="line">dnsTunneling=true</span><br><span class="line">firewall=true</span><br><span class="line">autoProxy=true</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/10753">原文链接</a></p>
+<h2 id="Git-的安装"><a href="#Git-的安装" class="headerlink" title="Git 的安装"></a>Git 的安装</h2><h3 id="Windows系统："><a href="#Windows系统：" class="headerlink" title="Windows系统："></a>Windows系统：</h3><p><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">官网</a>下载安装程序安装（可能需要挂梯子），使用默认安装选项即可。</p>
+<h3 id="Linux-系统"><a href="#Linux-系统" class="headerlink" title="Linux 系统"></a>Linux 系统</h3><p>包管理器安装</p>
+<pre><code>sudo apt install git
+</code></pre>
+<h3 id="Mac-系统"><a href="#Mac-系统" class="headerlink" title="Mac 系统"></a>Mac 系统</h3><p>包管理器安装  </p>
+<pre><code>brew install git
+</code></pre>
+<h3 id="如何检验git已经安装成功？"><a href="#如何检验git已经安装成功？" class="headerlink" title="如何检验git已经安装成功？"></a>如何检验git已经安装成功？</h3><pre><code>git --version
+</code></pre>
+<p>如果安装成功，将显示Git的版本号<br><a target="_blank" rel="noopener" href="https://imgse.com/i/piytahd"><img src="https://z1.ax1x.com/2023/12/03/piytahd.png" alt="piytahd.png"></a></p>
+<h2 id="Git-模型"><a href="#Git-模型" class="headerlink" title="Git 模型"></a>Git 模型</h2><p><img src="https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-fall-ckc/lec2/lec2/model.png"></p>
 
     </div>
 
@@ -258,19 +270,19 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/11/28/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="prev" title="Hexo常用命令">
-                  <i class="fa fa-angle-left"></i> Hexo常用命令
+                <a href="/2023/11/29/%E6%9A%82%E5%81%9CWindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/" rel="prev" title="暂停Windows自动更新">
+                  <i class="fa fa-angle-left"></i> 暂停Windows自动更新
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/11/29/%E6%9A%82%E5%81%9CWindows%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0/" rel="next" title="暂停Windows自动更新">
-                  暂停Windows自动更新 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
